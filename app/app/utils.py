@@ -1,7 +1,8 @@
 from typing import Union
-from .redis import fetchTargetUrl
-from .elasticsearch import insertRedirectEvent
+
 from .config import Config
+from .elasticsearch import insertRedirectEvent
+from .redis import fetchTargetUrl
 
 
 def getRedirectUrl(url_id: str, config: Config) -> Union[str, None]:

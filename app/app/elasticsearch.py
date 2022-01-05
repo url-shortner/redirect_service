@@ -1,4 +1,5 @@
 from datetime import datetime
+
 from elasticsearch import Elasticsearch
 
 
@@ -11,7 +12,11 @@ def insertRedirectEvent(
 ) -> bool:
 
     es = Elasticsearch([f"http://{es_host}:{es_port}"])
-    data = {"url_id": url_id, "target_url": target_url, "timestamp": datetime.now()}
+    data = {
+        "url_id": url_id,
+        "target_url": target_url,
+        "timestamp": datetime.now(),
+    }
 
     try:
         es.index(index=es_index, document=data)

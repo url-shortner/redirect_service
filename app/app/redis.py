@@ -1,6 +1,7 @@
-from typing import Union
-import redis as Redis
 import json
+from typing import Union
+
+import redis as Redis
 
 
 def fetchTargetUrl(url_id: str, redis_host: str) -> Union[str, None]:
